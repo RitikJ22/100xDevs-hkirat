@@ -7,7 +7,12 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  const punctuationRegex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+  var string=str.split(" ").join("").toLowerCase().replace(punctuationRegex, '');
+  var result = string.split("").reverse().join("");
+  console.log(result);
+  if (string == result) return true;
+  else return false;
 }
 
 module.exports = isPalindrome;
